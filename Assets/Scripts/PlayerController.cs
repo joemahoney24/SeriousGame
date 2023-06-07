@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -53,6 +54,11 @@ public class PlayerController : MonoBehaviour
         Camera.main.transform.position = new Vector3(Mathf.Clamp(smoothedPosition.x, -cameraBounds.x, cameraBounds.x), Mathf.Clamp(smoothedPosition.y, -cameraBounds.y, cameraBounds.y), -10);
 
         variableText.text = "SPF " + SPF.ToString();
+
+        if(SPF == 0)
+        {
+            SceneManager.LoadScene("Melanoma.");
+        }
     }
 
     void UpdateGrounding()
