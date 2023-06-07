@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7613421064901339579}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,3 +156,5 @@ MonoBehaviour:
   cameraFollowSpeed: 3
   cameraOffset: {x: 1, y: 1}
   cameraBounds: {x: 30, y: 0}
+  variableText: {fileID: 0}
+  SPF: 0

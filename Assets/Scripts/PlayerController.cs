@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public TMP_Text variableText;
     public int SPF;
 
+    private bool shade = false;
+
 
     void Start()
     {
@@ -61,6 +63,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Shade"))
+        {
+            shade = true;
+        }
+    }
+
     void UpdateGrounding()
     {
         Vector3 bottom = transform.position + Vector3.down * 0.45f;
@@ -75,8 +85,10 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.25f); // Wait for 2 seconds
-            SPF--; // Decrease the variable
+            if(!shade) {
+                yield return new WaitForSeconds(0.25f); // Wait for 2 seconds
+                SPF--; // Decrease the variable
+            }
         }
     }
 }
