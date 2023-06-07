@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(Camera.main.transform.position, targetPosition, cameraFollowSpeed * Time.deltaTime);
         Camera.main.transform.position = new Vector3(Mathf.Clamp(smoothedPosition.x, -cameraBounds.x, cameraBounds.x), Mathf.Clamp(smoothedPosition.y, -cameraBounds.y, cameraBounds.y), -10);
 
-        variableText.text = "Variable Value: " + SPF.ToString();
+        variableText.text = "SPF " + SPF.ToString();
     }
 
     void UpdateGrounding()
@@ -61,5 +61,13 @@ public class PlayerController : MonoBehaviour
         Debug.DrawLine(bottom, bottom + Vector3.down * 0.1f, Color.red);
 
         grounded = hit.collider != null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("sunscreen"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
