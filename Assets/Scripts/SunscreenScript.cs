@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SunscreenScript : MonoBehaviour
+
 {
     // Collect the coin when the player touches it
     public PlayerController player;

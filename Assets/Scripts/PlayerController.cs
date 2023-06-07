@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     public TMP_Text variableText;
     public int SPF;
 
+    public SpriteRenderer sunSprite;
+    public float maxSize;
+    public float minSize;
+
     private bool shade = false;
 
 
@@ -50,24 +54,40 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = vel;
 
-        // Move the camera smoothly towards the target position
         Vector3 targetPosition = cameraTarget.position + new Vector3(cameraOffset.x, cameraOffset.y, -10);
         Vector3 smoothedPosition = Vector3.Lerp(Camera.main.transform.position, targetPosition, cameraFollowSpeed * Time.deltaTime);
         Camera.main.transform.position = new Vector3(Mathf.Clamp(smoothedPosition.x, -cameraBounds.x, cameraBounds.x), Mathf.Clamp(smoothedPosition.y, -cameraBounds.y, cameraBounds.y), -10);
 
         variableText.text = "SPF " + SPF.ToString();
 
-        if(SPF == 0)
+        if (SPF == 0)
         {
             SceneManager.LoadScene("Melanoma.");
         }
+
+        // Calculate the size of the sun sprite based on SPF
+        float t = 1f - Mathf.InverseLerp(0, 10, SPF); // Invert the value of t
+        float newSize = Mathf.Lerp(minSize, maxSize, t);
+        sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
+
+        //float t = Mathf.InverseLerp(0, 10, SPF);
+        //float newSize = Mathf.Lerp(minSize, maxSize, t);
+        //sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Shade"))
+        if (collision.gameObject.CompareTag("Shade"))
         {
             shade = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Shade"))
+        {
+            shade = false;
         }
     }
 
@@ -85,10 +105,19 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            if(!shade) {
-                yield return new WaitForSeconds(0.25f); // Wait for 2 seconds
-                SPF--; // Decrease the variable
+<<<<<<< HEAD
+            if (!shade)
+            {
+                yield return new WaitForSeconds(0.25f); // Wait for 0.25 seconds
+                SPF--; // Decrease the SPF variable
+=======
+           if (!shade)
+            {
+                SPF--; 
+>>>>>>> a58ba7290279184a401a589ae63e258e588596fa
             }
+
+            yield return new WaitForSeconds(0.25f);
         }
     }
 }
