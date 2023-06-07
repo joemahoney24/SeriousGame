@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 1934629293}
   - component: {fileID: 1934629295}
   - component: {fileID: 1934629296}
+  - component: {fileID: 1934629297}
   m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
@@ -708,6 +709,18 @@ PolygonCollider2D:
       - {x: -0.14737332, y: 0.14888483}
       - {x: -0.3608142, y: -0.2722919}
       - {x: 0.36627254, y: -0.27502102}
+--- !u!114 &1934629297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934629291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10335060e25fa497ab2fd14853db7485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5473755217398935756
 PrefabInstance:
   m_ObjectHideFlags: 0
