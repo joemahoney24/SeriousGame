@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = vel;
 
-        // Move the camera smoothly towards the target position
         Vector3 targetPosition = cameraTarget.position + new Vector3(cameraOffset.x, cameraOffset.y, -10);
         Vector3 smoothedPosition = Vector3.Lerp(Camera.main.transform.position, targetPosition, cameraFollowSpeed * Time.deltaTime);
         Camera.main.transform.position = new Vector3(Mathf.Clamp(smoothedPosition.x, -cameraBounds.x, cameraBounds.x), Mathf.Clamp(smoothedPosition.y, -cameraBounds.y, cameraBounds.y), -10);
@@ -71,6 +70,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Shade"))
+        {
+            shade = false;
+        }
+    }
+
     void UpdateGrounding()
     {
         Vector3 bottom = transform.position + Vector3.down * 0.45f;
@@ -85,10 +92,12 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            if(!shade) {
-                yield return new WaitForSeconds(0.25f); // Wait for 2 seconds
-                SPF--; // Decrease the variable
+           if (!shade)
+            {
+                SPF--; 
             }
+
+            yield return new WaitForSeconds(0.25f);
         }
     }
 }
