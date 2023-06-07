@@ -105,16 +105,10 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-<<<<<<< HEAD
             if (!shade)
             {
                 yield return new WaitForSeconds(0.25f); // Wait for 0.25 seconds
                 SPF--; // Decrease the SPF variable
-=======
-           if (!shade)
-            {
-                SPF--; 
->>>>>>> a58ba7290279184a401a589ae63e258e588596fa
             }
 
             yield return new WaitForSeconds(0.25f);
