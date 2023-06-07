@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4c8f7e2832741c2b4748f2f6ed0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
 --- !u!1 &398338684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1110,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319100222925812329, guid: 59b3e5cc5b44c4e8cab8c366c340ae8a, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319100222925812330, guid: 59b3e5cc5b44c4e8cab8c366c340ae8a, type: 3}
+      propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8319100222925812330, guid: 59b3e5cc5b44c4e8cab8c366c340ae8a, type: 3}

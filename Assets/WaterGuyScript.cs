@@ -8,11 +8,13 @@ public class WaterGuyScript : MonoBehaviour
     public float speed;
     private int direction = -1;
     protected Rigidbody2D rb2d;
+    protected SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>(); 
+        rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,7 +30,21 @@ public class WaterGuyScript : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             direction = direction * -1;
+
+            if (spriteRenderer.flipX == true)
+            {
+                spriteRenderer.flipX = false;
+            } else
+            {
+                spriteRenderer.flipX = true;
+            }
         }
+
+        if (collision.GetComponent<PlayerController>()) {
+            Destroy(gameObject);
+        }
+
+
     }
 
 }
