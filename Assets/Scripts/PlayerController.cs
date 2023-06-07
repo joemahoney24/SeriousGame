@@ -89,17 +89,17 @@ public class PlayerController : MonoBehaviour
         //sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Shade"))
+        if (other.gameObject.CompareTag("Shade"))
         {
             shade = true;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Shade"))
+        if (other.gameObject.CompareTag("Shade"))
         {
             shade = false;
         }
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     void UpdateGrounding()
     {
-        Vector3 bottom = transform.position + Vector3.down * 0.45f;
+        Vector3 bottom = transform.position + Vector3.down * 0.8f + Vector3.left * 0.4f;
         RaycastHit2D hit = Physics2D.Raycast(bottom, Vector2.down, 0.1f, groundLayers);
 
         Debug.DrawLine(bottom, bottom + Vector3.down * 0.1f, Color.red);
