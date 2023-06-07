@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Umbrella
+    uniqueID: 2362235695
+    locked: 0
