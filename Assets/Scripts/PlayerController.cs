@@ -23,10 +23,12 @@ public class PlayerController : MonoBehaviour
     public TMP_Text variableText;
     public int SPF;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SPF = 0;
+        SPF = 10;
+        StartCoroutine(DecreaseCountdown());
     }
 
     void Update()
@@ -61,5 +63,14 @@ public class PlayerController : MonoBehaviour
         Debug.DrawLine(bottom, bottom + Vector3.down * 0.1f, Color.red);
 
         grounded = hit.collider != null;
+    }
+
+    private IEnumerator DecreaseCountdown()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.25f); // Wait for 2 seconds
+            SPF--; // Decrease the variable
+        }
     }
 }

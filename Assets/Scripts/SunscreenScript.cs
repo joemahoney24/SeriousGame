@@ -5,8 +5,10 @@ using UnityEngine;
 public class SunscreenScript : MonoBehaviour
 {
     // Collect the coin when the player touches it
+    public PlayerController player;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Player collided with sunscreen");
         // Check if the player touched the coin
         if (collision.CompareTag("Player"))
         {
@@ -24,5 +26,7 @@ public class SunscreenScript : MonoBehaviour
 
         // Destroy the coin object
         Destroy(gameObject);
+
+        player.SPF += 10;
     }
 }
