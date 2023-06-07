@@ -6,13 +6,13 @@ public class WaterGuyScript : MonoBehaviour
 {
 
     public float speed;
-    private int direction = 1;
+    private int direction = -1;
     protected Rigidbody2D rb2d;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>(); 
     }
 
     // Update is called once per frame
@@ -22,4 +22,13 @@ public class WaterGuyScript : MonoBehaviour
         vel.x = direction * speed;
         rb2d.velocity = vel;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            direction = direction * -1;
+        }
+    }
+
 }
