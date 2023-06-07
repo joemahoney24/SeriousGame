@@ -10,12 +10,14 @@ public class SunscreenScript : MonoBehaviour
         // Check if the player touched the coin
         if (collision.CompareTag("Player"))
         {
-            CollectCoin();
+            Debug.Log("Player collided with sunscreen");
+            CollectSunscreen();
+
         }
     }
 
     // Method to handle coin collection
-    private void CollectCoin()
+    private void CollectSunscreen()
     {
         // Add your desired logic here
         // For example, increase the player's score or play a sound effect
