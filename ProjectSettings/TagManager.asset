@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sunscreen
   - Shade
+  - WinCondition
   layers:
   - Default
   - TransparentFX

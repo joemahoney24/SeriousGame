@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private bool shade = false;
 
+    public GameObject winCondition;
+
+
 
     void Start()
     {
@@ -65,6 +68,17 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("Melanoma.");
         }
 
+        // Check for collision with the win condition
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, new Vector2(0.5f, 0.5f), 0);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject == winCondition)
+            {
+                Debug.Log("You win!");
+                // Add your win condition logic here, such as showing a win screen or loading the next level.
+            }
+        }
+
         // Calculate the size of the sun sprite based on SPF
         float t = 1f - Mathf.InverseLerp(0, 10, SPF); // Invert the value of t
         float newSize = Mathf.Lerp(minSize, maxSize, t);
@@ -90,6 +104,8 @@ public class PlayerController : MonoBehaviour
             shade = false;
         }
     }
+
+
 
     void UpdateGrounding()
     {
