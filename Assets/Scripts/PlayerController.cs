@@ -95,6 +95,15 @@ public class PlayerController : MonoBehaviour
         {
             shade = true;
         }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            SPF = SPF - 10;
+        }
+
+
+
+
     }
 
     private void OnTriggerExit2D(Collider2D other)

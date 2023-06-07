@@ -208,16 +208,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7613421064901339579, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
       propertyPath: maxSize
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7613421064901339579, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
       propertyPath: minSize
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7613421064901339579, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
       propertyPath: sunSprite
       value: 
-      objectReference: {fileID: 548554020359125505, guid: 223821351e88c459d8341cc47a7f4432, type: 3}
+      objectReference: {fileID: 1180073985}
+    - target: {fileID: 7613421064901339579, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
+      propertyPath: variableText
+      value: 
+      objectReference: {fileID: 1622870008}
     m_RemovedComponents:
     - {fileID: 7613421064901339525, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
@@ -858,6 +862,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223821351e88c459d8341cc47a7f4432, type: 3}
+--- !u!212 &1180073985 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 548554020359125505, guid: 223821351e88c459d8341cc47a7f4432, type: 3}
+  m_PrefabInstance: {fileID: 1036954142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1432620775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 6066289507722936431, guid: 9b7a4856ab16f468183f53f14d663e2c, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1977297343}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b7a4856ab16f468183f53f14d663e2c, type: 3}
 --- !u!1 &1934629291
@@ -1305,6 +1314,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1950607, y: 3.9906878}
   m_EdgeRadius: 0
+--- !u!114 &1977297343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7613421064901339579, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
+  m_PrefabInstance: {fileID: 142840035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977297336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4729f965895a4e8e8f0ece86f93b7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2139031160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1621,10 @@ PrefabInstance:
     - target: {fileID: 8319100222925812335, guid: 59b3e5cc5b44c4e8cab8c366c340ae8a, type: 3}
       propertyPath: m_Name
       value: WaterGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319100222925812335, guid: 59b3e5cc5b44c4e8cab8c366c340ae8a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59b3e5cc5b44c4e8cab8c366c340ae8a, type: 3}

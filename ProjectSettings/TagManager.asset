@@ -8,6 +8,7 @@ TagManager:
   - Shade
   - WinCondition
   - Obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX
