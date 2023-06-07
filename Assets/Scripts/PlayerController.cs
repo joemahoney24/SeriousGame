@@ -62,12 +62,4 @@ public class PlayerController : MonoBehaviour
 
         grounded = hit.collider != null;
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("sunscreen"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }
