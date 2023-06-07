@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,9 +20,13 @@ public class PlayerController : MonoBehaviour
     public Vector2 cameraOffset;
     public Vector2 cameraBounds;
 
+    public TMP_Text variableText;
+    public int SPF;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        SPF = 0;
     }
 
     void Update()
@@ -43,6 +49,8 @@ public class PlayerController : MonoBehaviour
         Vector3 targetPosition = cameraTarget.position + new Vector3(cameraOffset.x, cameraOffset.y, -10);
         Vector3 smoothedPosition = Vector3.Lerp(Camera.main.transform.position, targetPosition, cameraFollowSpeed * Time.deltaTime);
         Camera.main.transform.position = new Vector3(Mathf.Clamp(smoothedPosition.x, -cameraBounds.x, cameraBounds.x), Mathf.Clamp(smoothedPosition.y, -cameraBounds.y, cameraBounds.y), -10);
+
+        variableText.text = "SPF " + SPF.ToString();
     }
 
     void UpdateGrounding()
@@ -53,5 +61,13 @@ public class PlayerController : MonoBehaviour
         Debug.DrawLine(bottom, bottom + Vector3.down * 0.1f, Color.red);
 
         grounded = hit.collider != null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("sunscreen"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
