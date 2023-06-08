@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
             if ((vel.x < 0 && isFacingRight) || (vel.x > 0 && !isFacingRight))
             {
                 FlipCharacterSprite();
-            }s
+            }
 
 
 
