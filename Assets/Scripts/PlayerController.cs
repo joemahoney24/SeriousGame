@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         variableText.text = "SPF " + SPF.ToString();
 
-        if (SPF == 0)
+        if (SPF <= 0)
         {
             SceneManager.LoadScene("Melanoma.");
         }
