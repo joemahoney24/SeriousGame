@@ -1752,6 +1752,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4729f965895a4e8e8f0ece86f93b7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &1977297347
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977297336}
+  m_Enabled: 1
+  m_SortingLayerID: -1932731601
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1001 &2039867364
 PrefabInstance:
   m_ObjectHideFlags: 0
