@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ben's Scene.unity
     guid: edfbffcaf0b3d479ca38dce9b75f523e
+  - enabled: 1
+    path: Assets/Scenes/WinningScene.unity
+    guid: 683ad6bddf4284ae78c7a2838f93d0ed
+  - enabled: 1
+    path: Assets/Scenes/joes scene.unity
+    guid: 0fdfbf998790741eb9c2f52d62e842e1
   m_configObjects: {}

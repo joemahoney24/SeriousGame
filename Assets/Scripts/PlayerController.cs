@@ -32,6 +32,13 @@ public class PlayerController : MonoBehaviour
 
     public GameObject winCondition;
 
+    public SpriteRenderer characterSprite;
+    public Sprite[] walkingSprites;
+    public float spriteAnimationSpeed;
+
+    private bool isWalking = false;
+
+
 
 
     void Start()
@@ -76,6 +83,8 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("You win!");
                 // Add your win condition logic here, such as showing a win screen or loading the next level.
+                SceneManager.LoadScene("WinningScene");
+
             }
         }
 
@@ -87,6 +96,35 @@ public class PlayerController : MonoBehaviour
         //float t = Mathf.InverseLerp(0, 10, SPF);
         //float newSize = Mathf.Lerp(minSize, maxSize, t);
         //sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
+
+
+
+        Vector2 vel2 = rb.velocity;
+        vel2.x = Input.GetAxis("Horizontal") * speed;
+
+        // Check if the player is moving horizontally
+        if (vel2.x != 0 && grounded)
+        {
+            if (!isWalking)
+            {
+                isWalking = true;
+                StartCoroutine(AnimateWalkingSprites());
+            }
+        }
+        else
+        {
+            if (isWalking)
+            {
+                isWalking = false;
+                StopCoroutine(AnimateWalkingSprites());
+            }
+        }
+
+
+
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -113,6 +151,25 @@ public class PlayerController : MonoBehaviour
             shade = false;
         }
     }
+
+
+    private IEnumerator AnimateWalkingSprites()
+    {
+        int index = 0;
+
+        while (isWalking)
+        {
+            characterSprite.sprite = walkingSprites[index];
+
+            index++;
+            if (index >= walkingSprites.Length)
+                index = 0;
+
+            yield return new WaitForSeconds(spriteAnimationSpeed);
+        }
+    }
+
+
 
 
 

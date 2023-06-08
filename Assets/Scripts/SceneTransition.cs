@@ -9,7 +9,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Assuming the character has a "Player" tag
         {
-         //   SceneManager.LoadScene(sceneName); // Load the new scene
+            SceneManager.LoadScene(sceneName); // Load the new scene
         }
     }
 }
