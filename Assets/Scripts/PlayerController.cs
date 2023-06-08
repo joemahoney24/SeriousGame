@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("You win!");
                 // Add your win condition logic here, such as showing a win screen or loading the next level.
+                SceneManager.LoadScene("WinningScene");
+
             }
         }
 
