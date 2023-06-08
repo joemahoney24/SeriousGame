@@ -18,6 +18,6 @@ public class buttonscript : MonoBehaviour
     }
     public void click() 
     {
-        SceneManager.LoadScene("Charlie's Scene");
+        SceneManager.LoadScene("joes scene");
     }
 }
