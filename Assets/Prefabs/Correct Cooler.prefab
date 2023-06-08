@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7892134388584338312}
   - component: {fileID: 7892134388584338313}
   - component: {fileID: 7892134388584338318}
+  - component: {fileID: 6890148382150320609}
   m_Layer: 0
   m_Name: Correct Cooler
   m_TagString: Obstacle
@@ -133,3 +134,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.1714325, y: 5.3241796}
   m_EdgeRadius: 0
+--- !u!210 &6890148382150320609
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892134388584338319}
+  m_Enabled: 1
+  m_SortingLayerID: -1932731601
+  m_SortingLayer: 1
+  m_SortingOrder: 0

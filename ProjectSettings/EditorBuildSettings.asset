@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/joes scene.unity
     guid: 0fdfbf998790741eb9c2f52d62e842e1
+  - enabled: 1
+    path: Assets/Scenes/RabbaiBill's Scene.unity
+    guid: 167b54215daac41dca3e774961742921
   m_configObjects: {}
