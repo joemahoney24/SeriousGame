@@ -872,7 +872,7 @@ PrefabInstance:
     - target: {fileID: 4671450315711420685, guid: 2664a0723416f46cf938137bfae97f5d, type: 3}
       propertyPath: winCondition
       value: 
-      objectReference: {fileID: 5420153382824979601, guid: 6549669e89da04d29ad7b50c56b0b69f, type: 3}
+      objectReference: {fileID: 1222653434}
     - target: {fileID: 4671450315711420721, guid: 2664a0723416f46cf938137bfae97f5d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1010,6 +1010,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!1 &1222653434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5420153382824979601, guid: 6549669e89da04d29ad7b50c56b0b69f, type: 3}
+  m_PrefabInstance: {fileID: 1920874221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227139266
 GameObject:
   m_ObjectHideFlags: 0
