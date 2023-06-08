@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool inputJump = false;
 
     public LayerMask groundLayers;
+    public float spread = 0.1f;
 
     public Transform cameraTarget;
     public float cameraFollowSpeed;
@@ -30,9 +31,6 @@ public class PlayerController : MonoBehaviour
     private bool shade = false;
 
     public GameObject winCondition;
-    public GameObject levelOne;
-    public GameObject levelTwo;
-    public GameObject levelThree;
 
     public SpriteRenderer characterSprite;
     public Sprite[] walkingSprites;
@@ -42,17 +40,15 @@ public class PlayerController : MonoBehaviour
     private bool isWalking = false;
     private bool isFacingRight = true;
 
-    private AudioSource audioSource;
+    public SpriteRenderer background;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SPF = 20;
+        SPF = 10;
         StartCoroutine(DecreaseCountdown());
-
-        audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true;
-        audioSource.Play();
+        background = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -88,35 +84,32 @@ public class PlayerController : MonoBehaviour
         {
             if (collider.gameObject == winCondition)
             {
-                // Destroy(gameObject);
                 Debug.Log("You win!");
+                // Add your win condition logic here, such as showing a win screen or loading the next level.
                 SceneManager.LoadScene("WinningScene");
-            }
-
-            if (collider.gameObject == levelOne)
-            {
-                SceneManager.LoadScene("Charlie's Scene");
-            }
-
-            if(collider.gameObject == levelTwo)
-            {
-                SceneManager.LoadScene("Ben's Scene");
-            }
-
-            if(collider.gameObject == levelThree)
-            {
-                SceneManager.LoadScene("RabbaiBill's Scene");
             }
         }
 
         // Calculate the size of the sun sprite based on SPF
-        float t = 1f - Mathf.InverseLerp(0, 20, SPF); // Invert the value of t
+        float t = 1f - Mathf.InverseLerp(0, 10, SPF); // Invert the value of t
         float newSize = Mathf.Lerp(minSize, maxSize, t);
         sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
 
         //float t = Mathf.InverseLerp(0, 10, SPF);
         //float newSize = Mathf.Lerp(minSize, maxSize, t);
         //sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
+
+        if (SPF <= 5)
+        {
+            background.color = new Color(1, 0, 0, 1);
+        } else if (SPF <= 10)
+        {
+            background.color = new Color(1, 0.5f, 0.5f, 1);
+        } else
+        {
+            background.color = new Color(1, 1, 1, 1);
+        }
+
 
 
 
@@ -146,8 +139,15 @@ public class PlayerController : MonoBehaviour
             {
                 isWalking = false;
                 StopCoroutine(AnimateWalkingSprites());
+               
             }
         }
+
+
+
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -161,6 +161,10 @@ public class PlayerController : MonoBehaviour
         {
             SPF = SPF - 10;
         }
+
+
+
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -194,6 +198,10 @@ public class PlayerController : MonoBehaviour
         isFacingRight = !isFacingRight;
         characterSprite.flipX = !isFacingRight;
     }
+
+  
+
+
 
     void UpdateGrounding()
     {
