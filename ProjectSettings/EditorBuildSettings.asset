@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Melanoma..unity
     guid: b4cfd4c50601c442d94fd3823c26b0a1
+  - enabled: 1
+    path: Assets/Scenes/Ben's Scene.unity
+    guid: edfbffcaf0b3d479ca38dce9b75f523e
   m_configObjects: {}
