@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     private bool inputJump = false;
 
     public LayerMask groundLayers;
-    public float spread = 0.1f;
 
     public Transform cameraTarget;
     public float cameraFollowSpeed;
@@ -85,7 +84,6 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("You win!");
-                // Add your win condition logic here, such as showing a win screen or loading the next level.
                 SceneManager.LoadScene("WinningScene");
             }
 
@@ -137,7 +135,6 @@ public class PlayerController : MonoBehaviour
             {
                 isWalking = false;
                 StopCoroutine(AnimateWalkingSprites());
-               
             }
         }
     }
