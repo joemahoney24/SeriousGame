@@ -83,10 +83,10 @@ public class PlayerController : MonoBehaviour
         {
             if (collider.gameObject == winCondition)
             {
+                Destroy(gameObject);
                 Debug.Log("You win!");
                 // Add your win condition logic here, such as showing a win screen or loading the next level.
                 SceneManager.LoadScene("WinningScene");
-
             }
 
             if (collider.gameObject == levelOne)
