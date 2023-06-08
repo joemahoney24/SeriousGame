@@ -485,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunscreen (charlie) (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6066289507722936431, guid: 9b7a4856ab16f468183f53f14d663e2c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1855314781}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b7a4856ab16f468183f53f14d663e2c, type: 3}
 --- !u!1 &959455153
