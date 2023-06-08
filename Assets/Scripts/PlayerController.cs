@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             if (collider.gameObject == winCondition)
             {
-                Destroy(gameObject);
+                // Destroy(gameObject);
                 Debug.Log("You win!");
                 SceneManager.LoadScene("WinningScene");
             }
