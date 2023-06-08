@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public float spriteAnimationSpeed;
 
     private bool isWalking = false;
+    private bool isFacingRight = true;
 
 
 
@@ -110,6 +111,14 @@ public class PlayerController : MonoBehaviour
                 isWalking = true;
                 StartCoroutine(AnimateWalkingSprites());
             }
+
+            if ((vel.x < 0 && isFacingRight) || (vel.x > 0 && !isFacingRight))
+            {
+                FlipCharacterSprite();
+            }
+
+
+
         }
         else
         {
@@ -168,6 +177,14 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(spriteAnimationSpeed);
         }
     }
+
+
+    private void FlipCharacterSprite()
+    {
+        isFacingRight = !isFacingRight;
+        characterSprite.flipX = !isFacingRight;
+    }
+
 
 
 
