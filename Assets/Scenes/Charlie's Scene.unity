@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sandcastle
       objectReference: {fileID: 0}
+    - target: {fileID: 2114767455469598204, guid: 3cbb25535ac4546398eded9b66c8b91c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 069803e0ef28b4e53ab55013b89804d7, type: 2}
     - target: {fileID: 2114767455469598206, guid: 3cbb25535ac4546398eded9b66c8b91c, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -597,6 +601,10 @@ PrefabInstance:
       propertyPath: winCondition
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7613421064901339579, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
+      propertyPath: cameraBounds.x
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600567e3be19f47f6b6e9ce7549f63bb, type: 3}
 --- !u!114 &1050119063 stripped
@@ -621,6 +629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sandcastle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2114767455469598204, guid: 3cbb25535ac4546398eded9b66c8b91c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 069803e0ef28b4e53ab55013b89804d7, type: 2}
     - target: {fileID: 2114767455469598206, guid: 3cbb25535ac4546398eded9b66c8b91c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -935,6 +947,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7892134388584338313, guid: ebc608e4182fb410b878b71dcc794ef3, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 069803e0ef28b4e53ab55013b89804d7, type: 2}
     - target: {fileID: 7892134388584338315, guid: ebc608e4182fb410b878b71dcc794ef3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1085,6 +1101,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6628548585034601848, guid: 5ea876b61fbef42f29904afcd7696eea, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6628548585763784562, guid: 5ea876b61fbef42f29904afcd7696eea, type: 3}
       propertyPath: m_Name
       value: Correct WaterGuy
