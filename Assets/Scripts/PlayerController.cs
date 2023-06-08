@@ -42,11 +42,17 @@ public class PlayerController : MonoBehaviour
 
     public SpriteRenderer background;
 
+    public GameObject levelOne;
+    public GameObject levelTwo;
+    public GameObject levelThree;
+    public GameObject WinningScene;
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SPF = 10;
+        SPF = 20;
         StartCoroutine(DecreaseCountdown());
         background = GetComponent<SpriteRenderer>();
     }
@@ -91,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Calculate the size of the sun sprite based on SPF
-        float t = 1f - Mathf.InverseLerp(0, 10, SPF); // Invert the value of t
+        float t = 1f - Mathf.InverseLerp(0, 20, SPF); // Invert the value of t
         float newSize = Mathf.Lerp(minSize, maxSize, t);
         sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
 
@@ -162,8 +168,22 @@ public class PlayerController : MonoBehaviour
             SPF = SPF - 10;
         }
 
-
-
+        if(other.gameObject == levelOne)
+        {
+            SceneManager.LoadScene("Charlie's Scene");
+        }
+        if(other.gameObject == levelTwo)
+        {
+            SceneManager.LoadScene("Ben's Scene");
+        }
+        if(other.gameObject == levelThree)
+        {
+            SceneManager.LoadScene("RabbaiBill's Scene");
+        }
+        if(other.gameObject == WinningScene)
+        {
+            SceneManager.LoadScene("WinningScene");
+        }
 
     }
 
@@ -192,16 +212,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void FlipCharacterSprite()
     {
         isFacingRight = !isFacingRight;
         characterSprite.flipX = !isFacingRight;
     }
-
-  
-
-
 
     void UpdateGrounding()
     {
