@@ -96,6 +96,11 @@ public class PlayerController : MonoBehaviour
             {
                 SceneManager.LoadScene("Ben's Scene");
             }
+
+            if(collider.gameObject == levelThree)
+            {
+                SceneManager.LoadScene("RabbaiBill's Scene");
+            }
         }
 
         // Calculate the size of the sun sprite based on SPF
