@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SPF = 10;
+        SPF = 20;
         StartCoroutine(DecreaseCountdown());
 
         audioSource = GetComponent<AudioSource>();
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Calculate the size of the sun sprite based on SPF
-        float t = 1f - Mathf.InverseLerp(0, 10, SPF); // Invert the value of t
+        float t = 1f - Mathf.InverseLerp(0, 20, SPF); // Invert the value of t
         float newSize = Mathf.Lerp(minSize, maxSize, t);
         sunSprite.transform.localScale = new Vector3(newSize, newSize, 1);
 
