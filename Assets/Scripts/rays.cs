@@ -5,6 +5,7 @@ using UnityEngine;
 public class rays : MonoBehaviour
 {
     public float speed;
+    public float rayTime;
     private int direction = -1;
     protected Rigidbody2D rb2d;
     protected SpriteRenderer spriteRenderer;
@@ -29,9 +30,9 @@ public class rays : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.25f); // Wait for 0.25 seconds
+            yield return new WaitForSeconds(rayTime); // Wait for 0.25 seconds
             direction =  direction * -1;
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(rayTime);
         }
     }
 

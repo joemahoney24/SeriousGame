@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     private bool shade = false;
 
     public GameObject winCondition;
+    public GameObject levelOne;
+    public GameObject levelTwo;
+    public GameObject levelThree;
 
     public SpriteRenderer characterSprite;
     public Sprite[] walkingSprites;
@@ -39,9 +42,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isWalking = false;
     private bool isFacingRight = true;
-
-
-
 
     void Start()
     {
@@ -88,6 +88,16 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene("WinningScene");
 
             }
+
+            if (collider.gameObject == levelOne)
+            {
+                SceneManager.LoadScene("Charlie's Scene");
+            }
+
+            if(collider.gameObject == levelTwo)
+            {
+                SceneManager.LoadScene("Ben's Scene");
+            }
         }
 
         // Calculate the size of the sun sprite based on SPF
@@ -130,12 +140,6 @@ public class PlayerController : MonoBehaviour
                
             }
         }
-
-
-
-
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -149,10 +153,6 @@ public class PlayerController : MonoBehaviour
         {
             SPF = SPF - 10;
         }
-
-
-
-
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -186,10 +186,6 @@ public class PlayerController : MonoBehaviour
         isFacingRight = !isFacingRight;
         characterSprite.flipX = !isFacingRight;
     }
-
-  
-
-
 
     void UpdateGrounding()
     {
