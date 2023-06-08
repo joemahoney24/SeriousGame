@@ -42,11 +42,17 @@ public class PlayerController : MonoBehaviour
     private bool isWalking = false;
     private bool isFacingRight = true;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SPF = 10;
         StartCoroutine(DecreaseCountdown());
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     void Update()
