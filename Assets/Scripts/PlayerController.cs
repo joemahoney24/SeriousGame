@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer characterSprite;
     public Sprite[] walkingSprites;
     public float spriteAnimationSpeed;
+    
 
     private bool isWalking = false;
     private bool isFacingRight = true;
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour
             {
                 isWalking = false;
                 StopCoroutine(AnimateWalkingSprites());
+               
             }
         }
 
@@ -185,8 +187,7 @@ public class PlayerController : MonoBehaviour
         characterSprite.flipX = !isFacingRight;
     }
 
-
-
+  
 
 
 
