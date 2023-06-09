@@ -52,7 +52,18 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SPF = 20;
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "joes scene")
+        {
+            SPF = 20;
+        }
+        else
+        {
+            SPF = 10;
+        }
+
         StartCoroutine(DecreaseCountdown());
         background = GetComponent<SpriteRenderer>();
     }
