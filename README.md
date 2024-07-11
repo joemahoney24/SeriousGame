@@ -9,10 +9,10 @@ This was a fun project which served as a cool introduction to Serious Games. It 
 
 Features
 - 
-- Engaging 2D platformer mechanics
-- Educational content on sun safety
-- Multiple levels with increasing difficulty
-- SPF meter to track sunscreen effectiveness
+- Educational Gameplay: Players must manage their SPF by staying in the shade and collecting sunscreen. Dynamic SPF Mechanic: SPF starts at 20 and decreases over time. Shade protects SPF, while exposure to UV rays and water droplets reduces it.
+- Obstacles and Challenges: Navigate through levels with obstacles like coolers and sand castles, while making micro-choices about collecting sunscreen.
+- Victory and Loss Conditions: Reach the car at the end of each level to progress. Losing occurs when SPF reaches 0, prompting a restart from level 1.
+- Serious Purpose: Raises awareness about melanoma and the importance of sunscreen use, inspired by real-world health issues.
 
 Prerequisites
 -
