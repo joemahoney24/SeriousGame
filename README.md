@@ -7,6 +7,7 @@ Throughout the game the player is presented with a series of micro-choices. Coll
 
 This was a fun project which served as a cool introduction to Serious Games. It was helpful in honing coding skills in C# and in understanding general github workflows.
 
+
 Features
 - 
 - Educational Gameplay: Players must manage their SPF by staying in the shade and collecting sunscreen. Dynamic SPF Mechanic: SPF starts at 20 and decreases over time. Shade protects SPF, while exposure to UV rays and water droplets reduces it.
